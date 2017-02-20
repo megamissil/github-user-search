@@ -1,10 +1,6 @@
+A simple front end web app that takes a Github user's username (provided by the user of the application). 
 
-
-## Instructions
-
-A simple front end web app that takes a Github user's username (provided by the user of the application, ex. `megamissil`). 
-
-[Github's api](https://developer.github.com/v3/) is used to show the users profile data and a list of the provided user's repositories (public repos).
+[Github's api](https://developer.github.com/v3/) is used to show the user's profile data and a list of the provided user's repositories.
 
 ## The app displays the following Github user data:
   - Avatar
@@ -12,6 +8,8 @@ A simple front end web app that takes a Github user's username (provided by the 
   - Location
   - Bio
   - Public repos
+
+<!--
 
 Linter: eslintrc. Using Atom, run `apm install linter-eslint` and the editor will show linter errors and warnings.
 
@@ -27,7 +25,7 @@ Install [Node.js](https://nodejs.org/en/). Also, install [Bower](https://bower.i
 
 ```bash
 $ npm install -g ionic
-``` -->
+``` 
 
 To serve the app in the browser:
 
@@ -35,3 +33,4 @@ To serve the app in the browser:
 $ npm install
 $ npm start
 ```
+-->
