@@ -1,0 +1,139 @@
+@import "variables";
+@import "mixins";
+
+body {
+	font-family: $helvetica;
+}
+
+/* ====== Grid ====== */
+*, *:after, *:before {
+	@include border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+	color: $light-gray;
+	text-decoration: none;
+	@include large {
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.container, .row {
+	@extend %clearfix;
+}
+
+.row {
+	max-width: $grid-row-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	width: 100%;
+	max-width: $grid-max-width;
+	margin: 0 auto;
+}
+
+[class*='column-'] {
+	float: left;
+	padding-left: 0.7em; 
+	padding-right: 0.7em; 
+	@include medium-up {
+		padding-left: 0.9375rem;
+    	padding-right: 0.9375rem;
+	}
+	width: 100%;
+	min-height: 1px; 
+} 
+
+@for $i from 1 through $grid-columns {
+	@include medium-up {
+	    .column-#{$i} { 
+	     	width: 100% / $grid-columns * $i;
+	     	position: relative;
+	    	float: left;
+	    }
+	}
+}
+
+/* ====== Logo & Form Section ====== */
+.search-form, .git-logo {
+	text-align: center;
+}
+
+.git-logo {
+	img {
+		max-width: 200px;
+	}
+}
+
+.search-form {
+	@include medium-up {
+		width: 45%;
+	}
+	@include placeholder {
+	    font-size: 1.5rem;
+	    text-align: center;
+	    color: $medium-gray;
+	}
+	input, button {
+		width: 80%;
+		margin-bottom: 1rem;
+		@include medium-up {
+			width: 100%;
+			margin-bottom: 0;
+		}
+		height: 3rem;
+    	@include border-radius(5px);
+	}
+}
+
+/* ====== User Profile Section ====== */
+.user-profile {
+	@include border-radius(5px);
+	background: $charcoal;
+	margin: 1rem;
+	padding: 1rem;
+	color: $white;
+	@include medium-up {
+		margin: 2rem;
+		padding: 2rem;
+	}
+	img {
+		@include border-radius(5px);
+		max-width: 300px;
+		width: 100%;
+		margin-bottom: 1rem;
+		@include large {
+			&:hover {
+				@include filter(grayscale, 100%);
+				@include transition-all;
+			}
+		}
+	}
+	h2 {
+		@include small-only {
+			margin-top: 2rem; 
+		}
+	}
+	span {
+		font-weight: bold;
+	}
+	ul {
+		list-style-type: none;
+		margin: 1rem 0;
+		li {
+			margin-bottom: 1rem;
+			a {
+				font-size: 1.4rem;
+			}
+			p {
+				font-size: 0.85rem;
+			}
+		}
+	}
+}

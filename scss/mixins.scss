@@ -1,0 +1,81 @@
+/* ====== Mixins ====== */
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+
+// % <-- Placeholder selector
+%clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//Hover transition
+@mixin transition-all {
+  	-webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+
+//Media Query mixins
+@mixin small-only {
+  	@media (max-width: #{$medium-width - 1px}) {
+    	@content;
+  	}
+}
+
+@mixin medium {
+  	@media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    	@content;
+  	}
+}
+
+@mixin medium-up {
+  	@media (min-width: #{$medium-width}) {
+    	@content;
+  	}
+}
+
+@mixin large {
+  	@media (min-width: #{$large-width}) {
+    	@content;
+  	}
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+//Placeholder Styles
+@mixin placeholder {
+  	::-webkit-input-placeholder {@content;}
+  	:-moz-placeholder           {@content;}
+  	::-moz-placeholder          {@content;}
+  	:-ms-input-placeholder      {@content;}  
+}
+
+//Filter
+@mixin filter($filter-type,$filter-amount) { 
+  	-webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  	-moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  	-ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  	-o-filter: $filter-type+unquote('(#{$filter-amount})');
+  	filter: $filter-type+unquote('(#{$filter-amount})');
+}
