@@ -1,7 +1,7 @@
 {
-  "name": "mobile-probefahrt",
-  "version": "1.1.1",
-  "description": "mobile-probefahrt",
+  "name": "github-user-search",
+  "version": "0.0.1",
+  "description": "github-user-search",
   "scripts": {
     "start": "./node_modules/.bin/ionic serve --watch"
   },
